@@ -1,0 +1,32 @@
+/* selector {
+    property1: value;
+    property1: value;
+} */
+html {
+    background-color: rgb(70, 180, 151);
+}
+#main-header {
+    font-family: fantasy;
+    font-size: larger;
+    color:rgb(206, 235, 206);
+    background-color: dimgray;
+    text-align: center;
+    padding: 10px;
+    }
+
+    h2 {
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-style:oblique;
+        color: black;
+        font-size: xx-large;
+    }
+
+    .foster {
+        display: inline-block;
+        padding: 10px;
+      }
+
+    #helper-links {
+        align-content: center;
+        
+    }
