@@ -3,7 +3,7 @@ class Foster {
         this.id = foster.id;
         this.name = foster.name;
         this.age = foster.age;
-        this.saves = foster.saves;
+        this.img = foster.img;
         Foster.all.push(this);
     }
 

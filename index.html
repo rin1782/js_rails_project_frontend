@@ -10,22 +10,36 @@
         </header>
 
             <ul id="foster"></ul>
-            
-       
 
-    <!-- <div>
-        <section id="helper-links">
-            <h4>Can't adopt? That's okay!
-            <br> Click below to find other ways you can help!</h4>
-            <li><a href="#">Volunteer</a></li>
-            <li><a href="#">Donate</a></li>
-             <li><a href="#">Refer a friend</a></li>
-        </section>
-    </div> -->
+        <h4>Not quite ready but slightly interested?
+            <br>Click below to fill out a general inquiry form</h4>
+                <div id="askForm"></div>
+            
 
         <footer id="main-footer">
             <p>Copyright &copy; 2021, Erin Cola</p>
         </footer>
+        
+        
+        <script>
+            const gen = new XMLHttpRequest();
+            const askForm = document.getElementById("askForm");
+
+            gen.onload = function() {
+                if (this.status === 200) {
+                    askForm.innerHTML = gen.responseText
+                } else {
+                    console.warn("something went wrong");
+                }
+            };
+            
+            gen.open('get', 'form.html');
+            gen.send();
+
+        </script>
+        
+        
+        <script type="text/javascript" src="src/inquiry.js"></script>
         <script type="text/javascript" src="src/foster.js"></script>
         <script type="text/javascript" src="src/index.js"></script>
     </body>
