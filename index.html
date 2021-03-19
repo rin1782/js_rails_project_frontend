@@ -2,6 +2,11 @@
 <html>
     <head>
         <title>Shop to Adopt</title>
+        <script language="javascript">
+            function inquire() {
+                alert("thank you for your interest!")
+            }
+        </script>
         <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
     <body>
@@ -13,34 +18,24 @@
 
         <h4>Not quite ready but slightly interested?
             <br>Click below to fill out a general inquiry form</h4>
-                <div id="askForm"></div>
+                <article>
+                    <form name="general-inquiry">
+                        <input type="text" name="Your Name" placeholder="Your Name">
+                        <br>
+                        <input type="textarea" name="Enter Message" placeholder="Send us your message!">
+                        <br>
+                        <button onclick="inquire()">Submit</button>
+                    </form>
+                </article>
             
 
         <footer id="main-footer">
             <p>Copyright &copy; 2021, Erin Cola</p>
         </footer>
         
-        
-        <script>
-            const gen = new XMLHttpRequest();
-            const askForm = document.getElementById("askForm");
-
-            gen.onload = function() {
-                if (this.status === 200) {
-                    askForm.innerHTML = gen.responseText
-                } else {
-                    console.warn("something went wrong");
-                }
-            };
-            
-            gen.open('get', 'form.html');
-            gen.send();
-
-        </script>
-        
-        
         <script type="text/javascript" src="src/inquiry.js"></script>
         <script type="text/javascript" src="src/foster.js"></script>
         <script type="text/javascript" src="src/index.js"></script>
+        <script type="text/javascript" src="src/app.js"></script>
     </body>
 </html>
