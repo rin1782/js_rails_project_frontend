@@ -6,6 +6,13 @@
             function inquire() {
                 alert("thank you for your interest!")
             }
+
+            var favs = 0;
+            function favorite() {
+                document.getElementById("").innerHTML = favorite;
+
+                favs++;
+            }
         </script>
         <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
@@ -13,8 +20,11 @@
         <header id="main-header">
             <h1>My Foster Babies</h1>
         </header>
-
-            <ul id="foster"></ul>
+        <section>
+             <ul id="foster">
+                <button class="button" ondblclick="saveButton()">0</button>
+             </ul>
+        </section>
 
         <h4>Not quite ready but slightly interested?
             <br>Click below to fill out a general inquiry form</h4>
@@ -34,6 +44,7 @@
         </footer>
         
         <script type="text/javascript" src="src/inquiry.js"></script>
+        <script type="text/javascript" src="src/saveButton.js"></script>
         <script type="text/javascript" src="src/foster.js"></script>
         <script type="text/javascript" src="src/index.js"></script>
         <script type="text/javascript" src="src/app.js"></script>
