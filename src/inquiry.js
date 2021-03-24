@@ -1,14 +1,25 @@
 class Inquiry {
-    constructor(inquiry) {
-        this.id = inquiry.id;
-        this.msg = inquiry.msg;
-        this.saves = inquiry.saves;
-        Inquiry.all.push(this);
+    static all = []
+
+    constructor(id, msg, saves){
+        this.id = id;
+        this.msg = msg;
+        this.saves = saves;
+        Inquiry.all.push(this)
     }
 
-    renderMsgList() {
-        return `<h3>${this.msg}</h3>
-                <h4>${this.saves} people have asked so far!</h4>`;
-    }
+    createInquiry() {`
+        return
+        <form name="inquiry">
+            <input type="text" name="Your Name" placeholder="Your Name">
+                <br>
+            <input type="text" name="Foster Name" placeholder="Foster Name">
+                <br>
+            <input type="textarea" name="message" placeholder="enter message"
+            <button onclick="inquire()">Submit</button>
+        </form>`}
 
+        updateInquiry() {`
+        return
+        `}
 }

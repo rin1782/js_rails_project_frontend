@@ -1,21 +1,43 @@
 const fostersUrl = "http://localhost:3000/api/v1/fosters"
+const container = document.querySelector("#foster")
+const section = document.getElementById("section")
+const show = document.getElementById('container')
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch(fostersUrl)
+    fetchFosters()
+  });
+    function fetchFosters() {
+      fetch(fostersUrl)
       .then(res => res.json())
       .then(json => 
-        json.forEach(foster => { 
-            const fosterMarkup = `
-            <li>
-                <h1>${foster.name}</h1>
-                <h3>${foster.age} years old</h3>
-                <img src="${foster.img}" width="200px", height="200px">
-            </li>`;
-            document.querySelector("#foster").innerHTML += fosterMarkup;
+        json.forEach(foster => {  
+            const newFoster = new Foster (foster.id, foster.name, foster.age, foster.img, foster.inquiries)
+            container.innerHTML += newFoster.renderFosterList();
+            addListeners()
         })
       );
-  });
+    }
 
-  // want to make like button attached to each photo
+    function addListeners() {
+      let images = document.querySelectorAll(".fosterImg")
+      let newArray = Array.from(images)
+      newArray.forEach(img => {
+        img.addEventListener("click", askAbtMe)
+      })
+    }
+      function askAbtMe(e) {
 
+        section.style.visibility = "hidden"
+        let judge = Foster.all.find(element => element.id == e.target.id)
+        show.innerHTML =  judge.renderFosterList()
+        // judge.inquiries.forEach(inq => inq.msg)
+        debugger
+         
+      
+      }
+
+
+  
